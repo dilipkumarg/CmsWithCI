@@ -146,11 +146,13 @@ if ( ! function_exists('anchor'))
 
 		if ( ! is_array($uri))
 		{
-			$site_url = ( ! preg_match('!^\w+://! i', $uri)) ? site_url($uri) : $uri;
+            // edited by dilip
+			$site_url = ( ! preg_match('!^\w+://! i', $uri)) ? base_url($uri) : $uri;
 		}
 		else
 		{
-			$site_url = site_url($uri);
+            // edited site to base url
+			$site_url = base_url($uri);
 		}
 
 		if ($title == '')
